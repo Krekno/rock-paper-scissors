@@ -38,3 +38,31 @@ function playRound() {
         return "Invalid input. Please try again.";
     }
 }
+
+function playGame() {
+    let playerScore = 0;
+    let computerScore = 0;
+    let round = 0;
+    for (let i = 0; i < 5; i++) {
+        let result = playRound();
+        if (result.includes("win")) {
+            playerScore++;
+        } else if (result.includes("lose")) {
+            computerScore++;
+        } else if (result.includes("tie")) {
+            playerScore+=0.5;
+            computerScore+=0.5;
+        } else {
+            console.log("invalid input, please try again");
+            i--;
+        }
+        console.log(result);
+    }
+    if (playerScore > computerScore) {
+        return "You won the game!" + playerScore + " to " + computerScore;
+    } else if (playerScore < computerScore) {
+        return "You lost the game!" + computerScore + " to " + playerScore;
+    } else {
+        return "It's a tie!";
+    }
+}
