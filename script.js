@@ -23,3 +23,16 @@ function getPlayerChoice() {
         return "Invalid input. Please try again.";
     }
 }
+
+function playRound() {
+    let arr = ["Rock", "Paper", "Scissors"];
+    let computerChoice = getComputerChoice();
+    let playerChoice = getPlayerChoice();
+    if (playerChoice == computerChoice) {
+        return "It's a tie!";
+    } else if (playerChoice > computerChoice) {
+        return "You win!" + arr[playerChoice] + " beats " + arr[computerChoice];
+    } else {
+        return "You lose!" + arr[computerChoice] + " beats " + arr[playerChoice];
+    }
+}
