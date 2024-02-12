@@ -35,5 +35,17 @@ function playGame(userChoice) {
     } else {
         console.log('You lose');
         computerScoreCount++;
+        userScore.innerHTML = userScoreCount + ' - ' + computerScoreCount;
+    }
+    if (userScoreCount === 5) {
+        alert('You win the game');
+        userScoreCount = 0;
+        computerScoreCount = 0;
+        userScore.innerHTML = userScoreCount + ' - ' + computerScoreCount;
+    } else if (computerScoreCount === 5) {
+        alert('You lose the game');
+        userScoreCount = 0;
+        computerScoreCount = 0;
+        userScore.innerHTML = userScoreCount + ' - ' + computerScoreCount;
     }
 }
